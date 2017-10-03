@@ -26,7 +26,7 @@ public enum Cell {
 
 	// Function used for creating a cell given a string
     static Cell fromSymbol(final String symbol) {
-        Cell cellRepresentedBySymbol = null;
+        Cell cellReprsssesentedBySymbol = null;
         for (Cell cell : Cell.values()) {
             if (cell.symbol.equals(symbol)) {
                 cellRepresentedBySymbol = cell;
