@@ -155,7 +155,7 @@ public class WhenYouCreateAGrid {
     }
 
     @Test
-    public void ModifyingTheGridContentsAsAnArrayShouldNotModifyTheOriginalContents() {
+    public void modifyingTheGridContentsAsAnArrayShouldNotModifyTheOriginalContents() {
         String currentContents = "*.." + NEW_LINE + ".*." + NEW_LINE + "..*" + NEW_LINE;
         Grid grid = new Grid(currentContents);
 

@@ -16,7 +16,7 @@ public class GridReader {
 
 	// Returns array of cell objects created from inputted string
     public Cell[][] loadFrom(final String gridContents) {
-        List<Cell[]> rows = new ArrayList<Cell[]>();
+        List<Cell[]> rows = new ArrayList<>();
 
         String[] rowValues = splitIntoRows(gridContents); // First separate total content into different rows
         for (String row : rowValues) {
@@ -31,7 +31,7 @@ public class GridReader {
 	// Helper function, converts series of symbols into array of Cell objects
     private Cell[] splitIntoCells(final String row) {
         char[] cellSymbols = row.trim().toCharArray(); // First convert string into array of state symbols
-        List<Cell> cellsInRow = new ArrayList<Cell>();
+        List<Cell> cellsInRow = new ArrayList<>();
         for (char cellSymbol : cellSymbols) { // Then for each symbol
             Cell cell = Cell.fromSymbol(Character.toString(cellSymbol)); // Create a new cell object
             if (cell == null) {

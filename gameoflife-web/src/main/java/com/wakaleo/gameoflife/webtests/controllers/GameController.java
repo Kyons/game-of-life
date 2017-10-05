@@ -64,9 +64,10 @@ public class GameController {
     private void thinkABit(final int max) {
         int thinkingTime = getRandomGenerator().nextInt(max / 4);
         try {
-            Thread.currentThread().sleep(thinkingTime);
+            Thread.sleep(thinkingTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
+			Thread.interrupt();
         }
     }
 
@@ -109,7 +110,7 @@ public class GameController {
                                      final int column,
                                      final HttpServletRequest request) {
         String cellName = "cell_" + row + "_" + column;
-        return (request.getParameter(cellName) != null);
+        return request.getParameter(cellName) != null;
     }
 
 	// Getter for this class' random number generator

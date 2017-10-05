@@ -13,7 +13,7 @@ import static org.hamcrest.Matchers.*;
 public class WhenYouCreateANewUniverse {
 
     private static final String NEW_LINE = System.getProperty("line.separator");
-
+    private static final String ELLIPSES = ".....";
     public static final String EMPTY_GRID = "..." + NEW_LINE + "..." + NEW_LINE + "..." + NEW_LINE + "";
 
     @Test
@@ -35,7 +35,7 @@ public class WhenYouCreateANewUniverse {
 
     @Test
     public void aUniverseCanBeInitializedWithAnyDimension() {
-        String expectedGrid = "....." + NEW_LINE + "....." + NEW_LINE + "....." + NEW_LINE + "....." + NEW_LINE + "";
+        String expectedGrid = ELLIPSES + NEW_LINE + ELLIPSES + NEW_LINE + ELLIPSES + NEW_LINE + ELLIPSES + NEW_LINE + "";
 
         Universe theUniverse = new Universe(4, 5);
         String currentGrid = theUniverse.getGrid();

@@ -40,7 +40,7 @@ public class Universe {
         createNextGeneration();
     }
     public void createNextGeneration() {
-        StringBuffer nextGenerationContent = new StringBuffer();
+        StringBuilder nextGenerationContent = new StringBuilder();
         int maxRow = currentGridContent.getWidth();
         int maxColumn = currentGridContent.getHeight();
 
@@ -49,7 +49,7 @@ public class Universe {
             for (int x = 0; x < maxColumn; x++) { // From left to right
                 Cell currentCell = currentGridContent.getCellAt(x, y);
                 int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y); // getLiveNeighboursAt() defined in Grid.java
-                Cell nextCell = null;
+                Cell nextCell;
 
 				// Based on the rules of game-of-life, calculate next state
                 if (currentCell == Cell.LIVE_CELL) { // If cell is currently LIVE

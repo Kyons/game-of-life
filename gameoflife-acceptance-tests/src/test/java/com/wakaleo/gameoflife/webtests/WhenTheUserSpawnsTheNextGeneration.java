@@ -28,7 +28,7 @@ public class WhenTheUserSpawnsTheNextGeneration {
     PlayerSteps player;
 
 
-    final static String[][] EMPTY_GRID
+    private final static String[][] EMPTY_GRID
             = new String[][]{{".", ".", "."},
             {".", ".", "."},
             {".", ".", "."}};
