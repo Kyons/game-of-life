@@ -68,7 +68,7 @@ public class GameController {
         try {
             Thread.sleep(thinkingTime);
         } catch (InterruptedException e) {
-        	LOGGER.log("Interrupted exception",e)
+        	LOGGER.log("Interrupted exception",e);
 			Thread.currentThread().interrupt();
         }
     }
