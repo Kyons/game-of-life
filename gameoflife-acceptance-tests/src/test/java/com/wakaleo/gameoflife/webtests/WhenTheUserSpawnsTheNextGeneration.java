@@ -1,11 +1,9 @@
 package com.wakaleo.gameoflife.webtests;
 
-import com.wakaleo.gameoflife.webtests.requirements.GameOfLifeApplication;
 import com.wakaleo.gameoflife.webtests.steps.PlayerSteps;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.annotations.Story;
 import net.thucydides.core.annotations.WithTag;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.runners.ThucydidesRunner;
@@ -27,24 +25,17 @@ public class WhenTheUserSpawnsTheNextGeneration {
     @Steps
     PlayerSteps player;
 
-
-    private final static String[][] EMPTY_GRID
-            = new String[][]{{".", ".", "."},
-            {".", ".", "."},
-            {".", ".", "."}};
-
-
     @Test
     public void anEmptyGridShouldProduceAnEmptyGrid() {
         String[][] expectedGrid = new String[][]{{".", ".", "."},
                 {".", ".", "."},
                 {".", ".", "."}};
 
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.starts_simulation();
-        player.continues_simulation();
-        player.should_see_grid(expectedGrid);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.startsSimulation();
+        player.continuesSimulation();
+        player.shouldSeeGrid(expectedGrid);
 
     }
 
@@ -54,12 +45,12 @@ public class WhenTheUserSpawnsTheNextGeneration {
                 {".", ".", "."},
                 {".", ".", "."}};
 
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(1, 1);
-        player.starts_simulation();
-        player.continues_simulation();
-        player.should_see_grid(expectedGrid);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(1, 1);
+        player.startsSimulation();
+        player.continuesSimulation();
+        player.shouldSeeGrid(expectedGrid);
     }
 
     @Test
@@ -68,13 +59,13 @@ public class WhenTheUserSpawnsTheNextGeneration {
                 {".", ".", "."},
                 {".", ".", "."}};
 
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(1, 1);
-        player.clicks_on_cell_at(0, 1);
-        player.starts_simulation();
-        player.continues_simulation();
-        player.should_see_grid(expectedGrid);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(1, 1);
+        player.clicksOnCellAt(0, 1);
+        player.startsSimulation();
+        player.continuesSimulation();
+        player.shouldSeeGrid(expectedGrid);
     }
 
 
@@ -84,15 +75,15 @@ public class WhenTheUserSpawnsTheNextGeneration {
                 {"*", "*", "."},
                 {".", ".", "."}};
 
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(0, 0);
-        player.clicks_on_cell_at(0, 1);
-        player.clicks_on_cell_at(1, 0);
-        player.clicks_on_cell_at(1, 1);
-        player.starts_simulation();
-        player.continues_simulation();
-        player.should_see_grid(expectedGrid);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(0, 0);
+        player.clicksOnCellAt(0, 1);
+        player.clicksOnCellAt(1, 0);
+        player.clicksOnCellAt(1, 1);
+        player.startsSimulation();
+        player.continuesSimulation();
+        player.shouldSeeGrid(expectedGrid);
     }
 
     @Test
@@ -101,18 +92,18 @@ public class WhenTheUserSpawnsTheNextGeneration {
                 {".", "*", "."},
                 {".", "*", "."}};
 
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(0, 0);
-        player.clicks_on_cell_at(0, 1);
-        player.clicks_on_cell_at(1, 0);
-        player.clicks_on_cell_at(1, 1);
-        player.clicks_on_cell_at(1, 2);
-        player.starts_simulation();
-        player.continues_simulation();
-        player.continues_simulation();
-        player.continues_simulation();
-        player.should_see_grid(expectedGrid);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(0, 0);
+        player.clicksOnCellAt(0, 1);
+        player.clicksOnCellAt(1, 0);
+        player.clicksOnCellAt(1, 1);
+        player.clicksOnCellAt(1, 2);
+        player.startsSimulation();
+        player.continuesSimulation();
+        player.continuesSimulation();
+        player.continuesSimulation();
+        player.shouldSeeGrid(expectedGrid);
     }
 
     @Test
@@ -121,15 +112,15 @@ public class WhenTheUserSpawnsTheNextGeneration {
                 {"*", "*", "*"},
                 {".", ".", "."}};
 
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(1, 0);
-        player.clicks_on_cell_at(1, 1);
-        player.clicks_on_cell_at(1, 2);
-        player.starts_simulation();
-        player.continues_simulation();
-        player.continues_simulation();
-        player.should_see_grid(expectedGrid);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(1, 0);
+        player.clicksOnCellAt(1, 1);
+        player.clicksOnCellAt(1, 2);
+        player.startsSimulation();
+        player.continuesSimulation();
+        player.continuesSimulation();
+        player.shouldSeeGrid(expectedGrid);
     }
 
     @Test
@@ -138,16 +129,16 @@ public class WhenTheUserSpawnsTheNextGeneration {
                 {".", "*", "."},
                 {".", "*", "."}};
 
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(1, 0);
-        player.clicks_on_cell_at(1, 1);
-        player.clicks_on_cell_at(1, 2);
-        player.starts_simulation();
-        player.continues_simulation();
-        player.continues_simulation();
-        player.continues_simulation();
-        player.should_see_grid(expectedGrid);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(1, 0);
+        player.clicksOnCellAt(1, 1);
+        player.clicksOnCellAt(1, 2);
+        player.startsSimulation();
+        player.continuesSimulation();
+        player.continuesSimulation();
+        player.continuesSimulation();
+        player.shouldSeeGrid(expectedGrid);
     }
 
 }

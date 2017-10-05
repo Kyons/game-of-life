@@ -1,15 +1,9 @@
 package com.wakaleo.gameoflife.webtests;
 
-import com.wakaleo.gameoflife.webtests.steps.PlayerSteps;
-import net.thucydides.core.annotations.Managed;
-import net.thucydides.core.annotations.ManagedPages;
-import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.annotations.WithTag;
-import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.runners.ThucydidesRunner;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.WebDriver;
 
 @RunWith(ThucydidesRunner.class)
 
@@ -17,11 +11,17 @@ import org.openqa.selenium.WebDriver;
 public class WhenTheUserStoresGameHistory {
 
     @Test
-    public void aUserShouldBeAbleToSaveASimulationForFutureUse() {}
+    public void aUserShouldBeAbleToSaveASimulationForFutureUse() {
+    	// Do nothing because of X and Y.
+    }
 
     @Test
-    public void aUserShouldBeAbleToListAllTheSavedSimulations() {}
+    public void aUserShouldBeAbleToListAllTheSavedSimulations() {
+    	// Do nothing because of X and Y.
+    }
 
     @Test
-    public void aUserShouldBeAbleToReplayAStoredSimulation() {}
+    public void aUserShouldBeAbleToReplayAStoredSimulation() {
+    	// Do nothing because of X and Y.
+    }
 }

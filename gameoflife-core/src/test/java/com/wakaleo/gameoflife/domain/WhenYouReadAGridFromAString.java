@@ -11,7 +11,8 @@ import com.wakaleo.gameoflife.domain.GridReader;
 
 public class WhenYouReadAGridFromAString {
 
-    private final String NEW_LINE = System.getProperty("line.separator");
+    private static final String NEW_LINE = System.getProperty("line.separator");
+    private static final String DOT_ASTERISK_LINE = "..*...";
 
     @Test
     public void shouldBeAbleToReadAnEmptyGridOfCellsFromAnEmptyString() {
@@ -113,10 +114,10 @@ public class WhenYouReadAGridFromAString {
     public void shouldBeAbleToReadALargerGrid() {
         String gridContents = "......" + NEW_LINE +
                 "**...." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*...";
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE;
 
         Cell[][] expectedCells = {
                 {DEAD_CELL, DEAD_CELL, DEAD_CELL, DEAD_CELL, DEAD_CELL, DEAD_CELL},
@@ -137,13 +138,13 @@ public class WhenYouReadAGridFromAString {
     public void shouldBeAbleToReadAVeryLargerGrid() {
         String gridContents = "......" + NEW_LINE +
                 "**...." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*..." + NEW_LINE +
-                "..*...";
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE + NEW_LINE +
+                DOT_ASTERISK_LINE;
 
         Cell[][] expectedCells = {
                 {DEAD_CELL, DEAD_CELL, DEAD_CELL, DEAD_CELL, DEAD_CELL, DEAD_CELL},

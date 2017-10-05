@@ -14,42 +14,42 @@ public class PlayerSteps {
     private Pages pages;
 
     @Step
-    public void opens_home_page() {
+    public void opensHomePage() {
         onHomePage().open();
     }
 
     @Step
-    public void should_see_title_of(String expectedTitle) {
+    public void shouldSeeTitleOf(String expectedTitle) {
         assertThat(currentPage().getTitle()).contains(expectedTitle);
     }
 
     @Step
-    public void chooses_to_start_a_new_game() {
+    public void choosesToStartANewGame() {
         onHomePage().clickOnNewGameLink();
     }
 
     @Step
-    public void should_see_a_page_containing_text(String expectedText) {
+    public void shouldSeeAPageContainingText(String expectedText) {
         currentPage().shouldContainText(expectedText);
     }
 
     @Step
-    public void should_see_grid(String[][] expectedGrid) {
+    public void shouldSeeGrid(String[][] expectedGrid) {
         assertThat(onShowGridPage().getDisplayedGrid()).isEqualTo(expectedGrid);
     }
 
     @Step
-    public void starts_simulation() {
+    public void startsSimulation() {
         onEnterGridPage().clickOnGoButton();
     }
 
     @Step
-    public void clicks_on_cell_at(int row, int column) {
+    public void clicksOnCellAt(int row, int column) {
         onEnterGridPage().clickOnCellAt(row, column);
     }
 
     @Step
-    public void clicks_on_home() {
+    public void clicksOnHome() {
         currentPage().clickOnHome();
     }
 
@@ -69,7 +69,7 @@ public class PlayerSteps {
         return pages.get(GameOfLifePage.class);
     }
 
-    public void continues_simulation() {
+    public void continuesSimulation() {
         onShowGridPage().clickOnNextGenerationButton();
     }
 }

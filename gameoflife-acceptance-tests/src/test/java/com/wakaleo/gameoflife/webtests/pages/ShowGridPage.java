@@ -29,7 +29,7 @@ public class ShowGridPage extends GameOfLifePage {
 
         WebElement gridTable = getDriver().findElement(By.id(tableId));
         List<WebElement> rows = gridTable.findElements(By.tagName("tr"));
-        List<String[]> tableContents = new ArrayList<String[]>();
+        List<String[]> tableContents = new ArrayList<>();
         int numberOfColumns = 0;
         for (WebElement row : rows) {
             String[] rowContents = getCellsIn(row);
@@ -47,7 +47,7 @@ public class ShowGridPage extends GameOfLifePage {
 
     private String[] getCellsIn(WebElement row) {
         List<WebElement> cells = row.findElements(By.tagName("td"));
-        List<String> rowContents = new ArrayList<String>();
+        List<String> rowContents = new ArrayList<>();
         for (WebElement cell : cells) {
             String cellValue = cell.getText();
             rowContents.add(cellValue.trim());

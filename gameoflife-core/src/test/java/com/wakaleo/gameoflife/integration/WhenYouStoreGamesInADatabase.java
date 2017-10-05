@@ -5,12 +5,13 @@ import org.junit.Test;
 public class WhenYouStoreGamesInADatabase {
 
     @Test
-    public void should_store_games() {
-
+    public void shouldStoreGames() {
+    	// Do nothing because of V and Y.
     }
 
     @Test
-    public void should_load_saved_games() {
+    public void shouldLoadSavedGames() {
+    	// Do nothing because of X and Z.
     }
 
 }

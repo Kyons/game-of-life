@@ -1,6 +1,7 @@
 package com.wakaleo.gameoflife.webtests.controllers;
 
 import java.util.Random;
+import java.util.logging.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -21,6 +22,7 @@ import com.wakaleo.gameoflife.domain.Universe;
 @Controller
 @RequestMapping("/game")
 public class GameController {
+	private final static Logger LOGGER = Logger.getLogger(GameController.class.getName());
 	// For generating random thread sleep times
     private Random randomGenerator = new Random();
 
@@ -66,7 +68,7 @@ public class GameController {
         try {
             Thread.sleep(thinkingTime);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+        	LOGGER.log("Interrupted exception",e)
 			Thread.currentThread().interrupt();
         }
     }

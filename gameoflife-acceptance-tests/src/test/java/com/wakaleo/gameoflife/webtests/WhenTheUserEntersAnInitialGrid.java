@@ -1,12 +1,9 @@
 package com.wakaleo.gameoflife.webtests;
 
-import com.wakaleo.gameoflife.webtests.requirements.GameOfLifeApplication;
 import com.wakaleo.gameoflife.webtests.steps.PlayerSteps;
-import net.thucydides.core.annotations.Feature;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.ManagedPages;
 import net.thucydides.core.annotations.Steps;
-import net.thucydides.core.annotations.Story;
 import net.thucydides.core.annotations.WithTag;
 import net.thucydides.core.pages.Pages;
 import net.thucydides.junit.runners.ThucydidesRunner;
@@ -28,7 +25,7 @@ public class WhenTheUserEntersAnInitialGrid {
     PlayerSteps player;
 
 
-    private final static String[][] EMPTY_GRID
+    private static final String[][] EMPTY_GRID
             = new String[][]{{".", ".", "."},
             {".", ".", "."},
             {".", ".", "."}};
@@ -36,64 +33,64 @@ public class WhenTheUserEntersAnInitialGrid {
 
     @Test
     public void userShouldBeAbleChooseToCreateANewGameOnTheHomePage() {
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.should_see_a_page_containing_text("Please seed your universe");
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.shouldSeeAPageContainingText("Please seed your universe");
 
     }
 
     @Test
     public void userShouldBeAbleToSeedAnEmptyGridOnTheNewGamePage() {
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.starts_simulation();
-        player.should_see_grid(EMPTY_GRID);
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.startsSimulation();
+        player.shouldSeeGrid(EMPTY_GRID);
     }
 
     @Test
     public void theGridDisplayPageShouldContainANextGenerationButton() {
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.starts_simulation();
-        player.should_see_a_page_containing_text("Next Generation");
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.startsSimulation();
+        player.shouldSeeAPageContainingText("Next Generation");
     }
 
     @Test
     public void userShouldBeAbleToEnterOneLiveCellInTheGrid() {
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(1, 1);
-        player.starts_simulation();
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(1, 1);
+        player.startsSimulation();
 
         String[][] expectedGrid = new String[][]{{".", ".", "."},
                 {".", "*", "."},
                 {".", ".", "."}};
 
-        player.should_see_grid(expectedGrid);
+        player.shouldSeeGrid(expectedGrid);
     }
 
     @Test
     public void userShouldBeAbleToEnterLiveCellsInTheGrid() {
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_cell_at(0, 0);
-        player.clicks_on_cell_at(0, 1);
-        player.clicks_on_cell_at(1, 1);
-        player.starts_simulation();
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnCellAt(0, 0);
+        player.clicksOnCellAt(0, 1);
+        player.clicksOnCellAt(1, 1);
+        player.startsSimulation();
 
         String[][] expectedGrid = new String[][]{{"*", "*", "."},
                 {".", "*", "."},
                 {".", ".", "."}};
 
-        player.should_see_grid(expectedGrid);
+        player.shouldSeeGrid(expectedGrid);
     }
 
 
     @Test
     public void theGridPageShouldHaveALinkBackToTheHomePage() {
-        player.opens_home_page();
-        player.chooses_to_start_a_new_game();
-        player.clicks_on_home();
-        player.should_see_a_page_containing_text("Welcome to Conway's Game Of Life");
-    }
+        player.opensHomePage();
+        player.choosesToStartANewGame();
+        player.clicksOnHome();
+		player.shouldSeeAPageContainingText("Welcome to Conway's Game Of Life");
+	}
 }
